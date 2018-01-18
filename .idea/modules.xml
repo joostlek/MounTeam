@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MounTeam.iml" filepath="$PROJECT_DIR$/.idea/modules/MounTeam.iml" />
       <module fileurl="file://$PROJECT_DIR$/RaboHackathon.iml" filepath="$PROJECT_DIR$/RaboHackathon.iml" />
     </modules>
   </component>
