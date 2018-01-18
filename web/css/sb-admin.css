@@ -44,6 +44,10 @@
   width: 50%;
 }
 
+.rh-member-div {
+  margin-bottom:5em;
+}
+
 html {
   position: relative;
   min-height: 100%; }
@@ -141,6 +145,12 @@ body.fixed-nav {
     overflow: hidden;
     max-width: none;
     text-overflow: ellipsis; }
+  .rh-members {
+    text-align: center;
+  }
+  .rh-members > h5{
+    color:#555;
+  }
 
 @media (min-width: 992px) {
   #mainNav .navbar-brand {
