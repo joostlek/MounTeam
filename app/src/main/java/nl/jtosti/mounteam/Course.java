@@ -1,6 +1,7 @@
 package nl.jtosti.mounteam;
 
-import android.graphics.drawable.Icon;
+
+import java.util.ArrayList;
 
 /**
  * Created by joost on 18-1-18.
@@ -8,17 +9,17 @@ import android.graphics.drawable.Icon;
 
 public class Course {
     private String purpose;
-    private String[] preRequires;
-    private String[] tips;
-    private Step[] steps;
+    private ArrayList<String> preRequirements;
+    private ArrayList<String> tips;
+    private ArrayList<Step> steps;
     private Boolean solved;
     private String notes;
     private int icon;
     private String name;
 
-    public Course(String purpose, String[] preRequires, String[] tips, Step[] steps, Boolean solved, String notes, int icon, String name) {
+    public Course(String purpose, ArrayList<String> preRequirements, ArrayList<String> tips, ArrayList<Step> steps, Boolean solved, String notes, int icon, String name) {
         this.purpose = purpose;
-        this.preRequires = preRequires;
+        this.preRequirements = preRequirements;
         this.tips = tips;
         this.steps = steps;
         this.solved = solved;
@@ -35,28 +36,40 @@ public class Course {
         this.purpose = purpose;
     }
 
-    public String[] getPreRequires() {
-        return preRequires;
+    public ArrayList<String> getPreRequirements() {
+        return preRequirements;
     }
 
-    public void setPreRequires(String[] preRequires) {
-        this.preRequires = preRequires;
+    public void setPreRequirements(ArrayList<String> preRequirements) {
+        this.preRequirements = preRequirements;
     }
 
-    public String[] getTips() {
+    public void addPreRequirement(String preRequirements) {
+        this.preRequirements.add(preRequirements);
+    }
+
+    public ArrayList<String> getTips() {
         return tips;
     }
 
-    public void setTips(String[] tips) {
+    public void setTips(ArrayList<String> tips) {
         this.tips = tips;
     }
 
-    public Step[] getSteps() {
+    public void addTip(String tip) {
+        this.tips.add(tip);
+    }
+
+    public ArrayList<Step> getSteps() {
         return steps;
     }
 
-    public void setSteps(Step[] steps) {
+    public void setSteps(ArrayList<Step> steps) {
         this.steps = steps;
+    }
+
+    public void addStep(Step step) {
+        this.steps.add(step);
     }
 
     public Boolean getSolved() {

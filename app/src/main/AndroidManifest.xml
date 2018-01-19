@@ -19,6 +19,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ActivityCourse"
+            android:label="@string/title_activity_course"
+            android:parentActivityName=".ActivityMain"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="nl.jtosti.mounteam.ActivityMain" />
+        </activity>
+        <activity
+            android:name=".ActivityStep"
+            android:label="@string/title_activity_step"
+            android:parentActivityName=".ActivityCourse"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="nl.jtosti.mounteam.ActivityCourse" />
+        </activity>
+        <activity android:name=".ActivityOverview"></activity>
     </application>
 
 </manifest>

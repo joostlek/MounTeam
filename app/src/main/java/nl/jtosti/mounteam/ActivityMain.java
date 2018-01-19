@@ -47,10 +47,12 @@ public class ActivityMain extends AppCompatActivity implements NavigationView.On
         listView = (ListView) findViewById(R.id.course_list);
         courses = new ArrayList<>();
 
-        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_camera, "Getting started"));
-        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_gallery, "Nummer 2"));
-        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_send, "Fluffy Unicorns"));
+        courses.add(new Course("lmao", new ArrayList<String>(), new ArrayList<String>(), new ArrayList<Step>(), false, "la", R.drawable.ic_menu_camera, "Getting started"));
+        courses.add(new Course("lmao", new ArrayList<String>(), new ArrayList<String>(), new ArrayList<Step>(), false, "la", R.drawable.ic_menu_gallery, "Nummer 2"));
+        courses.add(new Course("lmao", new ArrayList<String>(), new ArrayList<String>(), new ArrayList<Step>(), false, "la", R.drawable.ic_menu_send, "Fluffy Unicorns"));
 
+        courses.get(1).addPreRequirement("MENSEN");
+        courses.get(1).addTip("DENKEN");
         adapter = new CourseAdapter(courses, getApplicationContext());
         listView.setAdapter(adapter);
 
