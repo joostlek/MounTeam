@@ -12,9 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
-public class ActivityMain extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
+
+public class ActivityMain extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    ArrayList<Course> courses;
+    ListView listView;
+    private static CourseAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,16 @@ public class ActivityMain extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        listView = (ListView) findViewById(R.id.course_list);
+        courses = new ArrayList<>();
+
+        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_camera, "Getting started"));
+        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_gallery, "Nummer 2"));
+        courses.add(new Course("lmao", new String[]{}, new String[]{}, new Step[]{}, false, "la", R.drawable.ic_menu_send, "Fluffy Unicorns"));
+
+        adapter = new CourseAdapter(courses, getApplicationContext());
+        listView.setAdapter(adapter);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
